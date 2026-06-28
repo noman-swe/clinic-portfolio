@@ -1,0 +1,126 @@
+import {
+  BoneFracture,
+  Stethoscope,
+  Activity,
+  HeartPulse,
+  Scissors,
+  Syringe,
+  Baby,
+  Users,
+  AlertCircle,
+  Smile,
+  Sparkles,
+  Droplet, // Diabetology / Transfusion Medicine
+  Scan, // Diagnostic & Interventional Radiology
+  Apple, // Dietetics & Nutrition
+  Ear, // ENT & Head Neck Surgery
+  Egg, // Fertility Centre
+  FileText, // Lab Medicine
+  Radio, // Nuclear Medicine / Lithotripsy
+  Eye, // Ophthalmology
+  Bone, // Orthopaedics / Joint Care
+  Brain, // Neurology / Neurosurgery / Psychiatry
+  // HeartPulse, // Respiratory Medicine
+  ShieldAlert, // Hepatobiliary / Gastro / Nephrology
+  HelpCircle, // Default Fallback
+} from "lucide-react";
+
+export const specialities = [
+  "Accident & Emergency",
+  "Anesthesia and Pain Medicine",
+  "Cancer Care Centre",
+  "Cardiology Care Centre",
+  "Cardiothoracic & Vascular Surgery",
+  "Cardiothoracic Anaesthesia",
+  "Child Development Centre",
+  "Counselling Centre",
+  "Critical Care Units",
+  "Dental & Maxillofacial Surgery",
+  "Dermatology & Venereology",
+  "Diabetology & Endocrinology",
+  "Diagnostic & Interventional Radiology",
+  "Dietetics & Nutrition",
+  "ENT & Head Neck Surgery",
+  "Fertility Centre",
+  "Gastroenterology & Hepatology",
+  "General & Laparoscopic Surgery",
+  "Hematology & Stem Cell Transplant",
+  "Hepatobiliary, Pancreatic & Liver Transplant",
+  "Internal Medicine",
+  "Joint Care & Wellness Centre",
+  "Kidney Transplant Program",
+  "Lab Medicine",
+  "Lithotripsy",
+  "Neonatology",
+  "Nephrology",
+  "Neurology",
+  "Neurosurgery",
+  "Nuclear Medicine",
+  "Obstetrics & Gynaecology",
+  "Ophthalmology",
+  "Orthopaedics",
+  "Paediatric Cardiology",
+  "Paediatric Surgery & Urology",
+  "Paediatrics",
+  "Physical Medicine & Rehabilitation",
+  "Plastic & Cosmetic Surgery",
+  "Psychiatry",
+  "Respiratory Medicine",
+  "Rheumatology",
+  "Thoracic Surgery",
+  "Transfusion Medicine",
+  "Urology",
+];
+
+// সবগুলো স্পেশালিটির জন্য প্রাসঙ্গিক আইকন ম্যাপার
+export const specialityIcons: Record<string, React.ComponentType<any>> = {
+  "Accident & Emergency": BoneFracture,
+  "Anesthesia and Pain Medicine": Stethoscope,
+  "Cancer Care Centre": Activity,
+  "Cardiology Care Centre": HeartPulse,
+  "Cardiothoracic & Vascular Surgery": Scissors,
+  "Cardiothoracic Anaesthesia": Syringe,
+  "Child Development Centre": Baby,
+  "Counselling Centre": Users,
+  "Critical Care Units": AlertCircle,
+  "Dental & Maxillofacial Surgery": Smile,
+  "Dermatology & Venereology": Sparkles,
+  "Diabetology & Endocrinology": Droplet,
+  "Diagnostic & Interventional Radiology": Scan,
+  "Dietetics & Nutrition": Apple,
+  "ENT & Head Neck Surgery": Ear,
+  "Fertility Centre": Egg,
+  "Gastroenterology & Hepatology": ShieldAlert,
+  "General & Laparoscopic Surgery": Scissors,
+  "Hematology & Stem Cell Transplant": Droplet,
+  "Hepatobiliary, Pancreatic & Liver Transplant": ShieldAlert,
+  "Internal Medicine": Stethoscope,
+  "Joint Care & Wellness Centre": Bone,
+  "Kidney Transplant Program": ShieldAlert,
+  "Lab Medicine": FileText,
+  Lithotripsy: Radio,
+  Neonatology: Baby,
+  Nephrology: ShieldAlert,
+  Neurology: Brain,
+  Neurosurgery: Brain,
+  "Nuclear Medicine": Radio,
+  "Obstetrics & Gynaecology": Baby,
+  Ophthalmology: Eye,
+  Orthopaedics: Bone,
+  "Paediatric Cardiology": HeartPulse,
+  "Paediatric Surgery & Urology": Scissors,
+  Paediatrics: Baby,
+  "Physical Medicine & Rehabilitation": Activity,
+  "Plastic & Cosmetic Surgery": Sparkles,
+  Psychiatry: Brain,
+  "Respiratory Medicine": HeartPulse,
+  Rheumatology: Bone,
+  "Thoracic Surgery": HeartPulse,
+  "Transfusion Medicine": Droplet,
+  Urology: ShieldAlert,
+};
+
+// কোনো আইকন ম্যাচ না করলে ডিবল্ট হিসেবে HelpCircle আইকনটি দেখাবে
+export function getSpecialityIcon(name: string) {
+  return specialityIcons[name] || HelpCircle;
+}
