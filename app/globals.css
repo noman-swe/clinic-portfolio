@@ -4,6 +4,7 @@
   --background: #ffffff;
   --foreground: #171717;
   --primary: #08295b;
+  --gray-light: #f5f7fb;
   --secondary: #0ea5e9;
   /* --secondary: #15a7eb; */
 }
@@ -14,6 +15,7 @@
   --font-sans: var(--font-plus-jakarta), sans-serif;
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
+  --color-gray-light: var(--gray-light);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,6 +24,7 @@
     --foreground: #ededed;
     --primary: #08295b;
     --secondary: #0ea5e9;
+    --gray-light: #f5f7fb;
   }
 }
 

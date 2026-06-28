@@ -7,6 +7,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 // সেন্ট্রাল মক ডাটা ফাইল থেকে মেইন অ্যারে এবং আইকন গেটার ফাংশনটি নিয়ে আসা হলো
 import { specialities, getSpecialityIcon } from "@/mock-data/specialities";
+import PrimaryButton from "@/components/shared/PrimaryButton";
 
 export default function OurSpecialities() {
     const [page, setPage] = useState(0);
@@ -30,7 +31,7 @@ export default function OurSpecialities() {
 
     return (
         <section className="py-20 bg-white font-sans">
-            <div className="mx-auto max-w-7xl px-6 md:px-8">
+            <div className="mx-auto container px-6 md:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 
                     {/* LEFT SIDE: DOCTOR & PATIENT IMAGE */}
@@ -49,7 +50,7 @@ export default function OurSpecialities() {
 
                         {/* Header Title */}
                         <div>
-                            <h2 className="text-3xl md:text-4xl font-bold text-[#08295B] tracking-tight">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary tracking-tight">
                                 Our Specialities
                             </h2>
                         </div>
@@ -67,11 +68,11 @@ export default function OurSpecialities() {
                                         className="group flex flex-col items-center justify-center text-center p-6 bg-white border border-slate-100 rounded-xl transition-all duration-300 hover:shadow-lg hover:border-sky-300 hover:-translate-y-1 h-33.75"
                                     >
                                         {/* Icon Container */}
-                                        <div className="text-[#08295B] group-hover:text-sky-600 transition-colors duration-300 mb-3">
+                                        <div className="text-primary group-hover:text-sky-600 transition-colors duration-300 mb-3">
                                             <IconComponent size={32} strokeWidth={1.5} />
                                         </div>
                                         {/* Text */}
-                                        <span className="text-[13px] font-semibold text-[#08295B] leading-tight max-w-35">
+                                        <span className="text-[13px] font-semibold text-primary leading-tight max-w-35">
                                             {item}
                                         </span>
                                     </Link>
@@ -102,12 +103,7 @@ export default function OurSpecialities() {
 
                             {/* View All Button */}
                             <div>
-                                <Link
-                                    href="/specialities"
-                                    className="relative overflow-hidden inline-block bg-primary text-white text-sm font-semibold tracking-wide px-8 py-3.5 rounded-sm hover:bg-primary transition-all duration-300 shadow-md text-center uppercase before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-linear-to-r before:from-transparent before:via-white/30 before:to-transparent before:transition-all before:duration-500 hover:before:left-full"
-                                >
-                                    View All Specialities
-                                </Link>
+                                <PrimaryButton text="View All Specialities" href="/specialities" showArrow={false} />
                             </div>
 
                         </div>

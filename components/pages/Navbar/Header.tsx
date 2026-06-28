@@ -21,6 +21,7 @@ export default function Header() {
             />
 
             <MegaMenu
+                setIsMegaMenuOpen={setIsMegaMenuOpen}
                 isOpen={isMegaMenuOpen}
                 setIsOpen={setIsMegaMenuOpen}
             />

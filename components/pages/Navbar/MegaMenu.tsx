@@ -6,9 +6,11 @@ import Link from "next/link";
 interface MegaMenuProps {
     isOpen: boolean;
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+    setIsMegaMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export default function MegaMenu({ isOpen, setIsOpen }: MegaMenuProps) {
+export default function MegaMenu({ isOpen, setIsOpen,
+    setIsMegaMenuOpen, }: MegaMenuProps) {
     if (!isOpen) return null;
 
     // ৪টি কলামে ডাটা ভাগ করা
@@ -26,13 +28,14 @@ export default function MegaMenu({ isOpen, setIsOpen }: MegaMenuProps) {
             // টপ পজিশন top-full এবং ওভারফ্লো কন্ট্রোল অ্যাড করা হয়েছে
             className="absolute left-0 top-full w-full bg-primary shadow-2xl border-t border-white/10 animate-in fade-in slide-in-from-top-2 duration-200 z-50 max-h-[calc(100vh-120px)] overflow-y-auto scrollbar-thin scrollbar-thumb-white/20"
         >
-            <div className="mx-auto max-w-7xl px-8 py-8">
+            <div className="mx-auto container px-8 py-8">
                 <div className="grid grid-cols-4 gap-x-8 gap-y-2">
                     {columns.map((column, index) => (
                         <div key={index} className="flex flex-col space-y-2">
                             {column.map((item) => (
                                 <Link
                                     key={item}
+                                    onClick={() => setIsMegaMenuOpen(false)}
                                     href={`/specialities/${item
                                         .toLowerCase()
                                         .replace(/[^a-z0-9]+/g, "-")}`}

@@ -21,6 +21,7 @@ import {
   Bone, // Orthopaedics / Joint Care
   Brain, // Neurology / Neurosurgery / Psychiatry
   // HeartPulse, // Respiratory Medicine
+  TestTubes,
   ShieldAlert, // Hepatobiliary / Gastro / Nephrology
   HelpCircle, // Default Fallback
 } from "lucide-react";
@@ -117,7 +118,7 @@ export const specialityIcons: Record<string, React.ComponentType<any>> = {
   Rheumatology: Bone,
   "Thoracic Surgery": HeartPulse,
   "Transfusion Medicine": Droplet,
-  Urology: ShieldAlert,
+  Urology: TestTubes,
 };
 
 // কোনো আইকন ম্যাচ না করলে ডিবল্ট হিসেবে HelpCircle আইকনটি দেখাবে

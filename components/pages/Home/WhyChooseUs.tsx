@@ -43,7 +43,7 @@ export default function WhyChooseUs() {
                     <span className="text-sky-600 font-bold text-xs sm:text-sm tracking-widest uppercase bg-sky-50 px-3 py-1 rounded-full">
                         Why Choose Sonia Nursing Home
                     </span>
-                    <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#08295B]">
+                    <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-primary">
                         We Are Commitment to Delivering Clinical Excellence
                     </h2>
                     <p className="text-slate-500 text-justify text-sm sm:text-base leading-relaxed">
@@ -63,12 +63,12 @@ export default function WhyChooseUs() {
                             >
                                 <div className="space-y-4">
                                     {/* Icon Box */}
-                                    <div className="inline-flex p-3 bg-white text-[#08295B] border border-slate-100 rounded-lg group-hover:bg-[#08295B] group-hover:text-white transition-all duration-300 shadow-sm">
+                                    <div className="inline-flex p-3 bg-white text-primary border border-slate-100 rounded-lg group-hover:bg-primary group-hover:text-white transition-all duration-300 shadow-sm">
                                         <IconComponent size={24} strokeWidth={2} />
                                     </div>
 
                                     {/* Title & Description */}
-                                    <h3 className="text-lg font-bold text-[#08295B] tracking-tight group-hover:text-sky-600 transition-colors duration-200">
+                                    <h3 className="text-lg font-bold text-primary tracking-tight group-hover:text-sky-600 transition-colors duration-200">
                                         {feature.title}
                                     </h3>
                                     <p className="text-slate-500 text-sm leading-relaxed">

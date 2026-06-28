@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ChevronDown, Menu, X } from "lucide-react";
 import TopBar from "./TopBar";
+import SoniaLogo from "@/components/shared/SoniaLogo";
 
 interface NavbarProps {
     isMegaMenuOpen: boolean;
@@ -32,7 +33,7 @@ export default function Navbar({
         { name: "About Us", href: "/about-us" },
         { name: "Doctors", href: "/doctors" },
         { name: "Specialities", megaMenu: true },
-        { name: "Patient Stories", href: "/patient-stories" },
+        { name: "Blogs", href: "/blogs" },
         { name: "Careers", href: "/careers" },
     ];
 
@@ -100,6 +101,7 @@ export default function Navbar({
                                 priority
                                 className="h-14 w-auto"
                             />
+                            {/* <SoniaLogo /> */}
                         </Link>
 
                         {/* DESKTOP MENU */}
