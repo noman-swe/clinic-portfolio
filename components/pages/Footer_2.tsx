@@ -20,7 +20,7 @@ export default function Footer_2() {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-150 bg-[#14355a]/60 rounded-full blur-[140px] opacity-70 pointer-events-none z-0" />
 
             {/* ২. বড় ওয়াটারমার্ক টেক্সট text-[#132d4a]/25 */}
-            <div className="absolute bottom-16 left-0 w-full text-center select-none pointer-events-none z-0 overflow-hidden px-4 hidden sm:block">
+            <div className="absolute bottom-6 left-0 w-full text-center select-none pointer-events-none z-0 overflow-hidden px-4 hidden sm:block">
                 <h1 className="text-6xl md:text-8xl lg:text-[13rem] font-black text-secondary/5 tracking-wider uppercase leading-none select-none">
                     Sonia Nursing Home
                 </h1>

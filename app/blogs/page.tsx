@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Calendar, Clock, ChevronRight } from "lucide-react";
-import { blogPosts } from "@/mock-data/blogs";
+import { BlogPost } from "@/mock-data/blogs";
 
 export const metadata = {
     title: "Health Blogs & Articles | Sonia Nursing Home",
@@ -30,7 +30,7 @@ export default function BlogsPage() {
 
                 {/* STATIC 6 BLOGS GRID - FULL RESPONSIVE */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {blogPosts.map((post) => (
+                    {BlogPost.map((post) => (
                         <article
                             key={post.id}
                             className="group flex flex-col justify-between bg-white rounded-xl overflow-hidden border border-slate-100 hover:border-sky-200 hover:shadow-xl transition-all duration-300"
@@ -43,6 +43,9 @@ export default function BlogsPage() {
                                         alt={post.title}
                                         fill
                                         className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                                        sizes="(max-width: 768px) 100vw,
+                                        (max-width: 1200px) 50vw,
+                                        33vw"
                                     />
                                     <span className="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-sm uppercase tracking-wider shadow-sm group-hover:bg-sky-500 group-hover:text-primary transition-colors duration-200">
                                         {post.category}
@@ -58,7 +61,7 @@ export default function BlogsPage() {
                                         </div>
                                         <div className="flex items-center gap-1">
                                             <Clock size={14} />
-                                            <span>{post.readTime}</span>
+                                            <span>{post.readingTime}</span>
                                         </div>
                                     </div>
 

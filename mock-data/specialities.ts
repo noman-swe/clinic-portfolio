@@ -10,20 +10,19 @@ import {
   AlertCircle,
   Smile,
   Sparkles,
-  Droplet, // Diabetology / Transfusion Medicine
-  Scan, // Diagnostic & Interventional Radiology
-  Apple, // Dietetics & Nutrition
-  Ear, // ENT & Head Neck Surgery
-  Egg, // Fertility Centre
-  FileText, // Lab Medicine
-  Radio, // Nuclear Medicine / Lithotripsy
-  Eye, // Ophthalmology
-  Bone, // Orthopaedics / Joint Care
-  Brain, // Neurology / Neurosurgery / Psychiatry
-  // HeartPulse, // Respiratory Medicine
+  Droplet, 
+  Scan,
+  Apple,
+  Ear, 
+  Egg,
+  FileText, 
+  Radio, 
+  Eye,
+  Bone,
+  Brain, 
   TestTubes,
-  ShieldAlert, // Hepatobiliary / Gastro / Nephrology
-  HelpCircle, // Default Fallback
+  ShieldAlert,
+  HelpCircle, 
 } from "lucide-react";
 
 export const specialities = [

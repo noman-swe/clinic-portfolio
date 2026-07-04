@@ -5,7 +5,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ChevronDown, Menu, X } from "lucide-react";
 import TopBar from "./TopBar";
-import SoniaLogo from "@/components/shared/SoniaLogo";
 
 interface NavbarProps {
     isMegaMenuOpen: boolean;
@@ -47,7 +46,6 @@ export default function Navbar({
                 <button
                     type="button"
                     onMouseEnter={() => setIsMegaMenuOpen(true)}
-                    // অ্যাক্টিভ বা হোভার হলে ব্যাকগ্রাউন্ড sky-500 এবং টেক্সট white হবে
                     className={`relative flex h-11 items-center gap-1.5 px-4 text-[15px] font-semibold transition-all duration-200 rounded-md ${isActive || isMegaMenuOpen
                         ? "bg-primary text-white"
                         : "text-slate-600 hover:bg-primary hover:text-white"

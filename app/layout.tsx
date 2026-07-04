@@ -23,7 +23,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      {/* ৩. body ট্যাগের ভেতর ফন্টের ভ্যারিয়েবল এবং font-sans ক্লাসটি দিয়ে দিন */}
       <body className={`${plusJakartaSans.variable} font-sans antialiased`}>
         <Header />
         <main>
