@@ -67,6 +67,9 @@ export default function HeroSlider() {
                             fill
                             priority={index === 0}
                             className="object-cover object-center"
+                            sizes="(max-width: 640px) 100vw,
+                                (max-width: 1024px) 50vw,
+                                33vw"
                         />
 
                         <div className="absolute inset-0 z-20 flex items-center">

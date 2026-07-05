@@ -99,7 +99,6 @@ export default function Navbar({
                                 priority
                                 className="h-14 w-auto"
                             />
-                            {/* <SoniaLogo /> */}
                         </Link>
 
                         {/* DESKTOP MENU */}

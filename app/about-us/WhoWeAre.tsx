@@ -9,7 +9,8 @@ export default function WhoWeAre({ data }: WhoWeAreProps) {
         <section className="bg-gray-light text-primary py-20 px-6">
             <div className="container mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center px-6 lg:py-8">
                 <div className="lg:col-span-5 relative h-72 sm:h-96 w-full rounded-xl overflow-hidden shadow-2xl border border-white/10">
-                    <Image src={data.image} alt={data.title} fill className="object-cover" sizes="128" />
+                    <Image src={data.image} alt={data.title} fill className="object-cover" sizes="(max-width: 640px) 100vw,
+                  (max-width: 1024px) 50vw, 33vw" />
                 </div>
                 <div className="lg:col-span-7 space-y-6">
                     <h2 className="text-3xl md:text-4xl font-bold tracking-tight relative pb-3 ">

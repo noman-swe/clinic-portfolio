@@ -103,6 +103,9 @@ function BlogCard({ post }: { post: BlogPost }) {
                         alt={post.title}
                         fill
                         className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 640px) 100vw,
+                        (max-width: 1024px) 50vw,
+                        33vw"
                     />
                     <span className="absolute top-4 left-4 bg-sky-500 text-primary text-xs font-bold px-3 py-1 rounded-sm uppercase tracking-wider shadow-sm">
                         {post.category}

@@ -185,7 +185,9 @@ export default function SpecialityDetailPage() {
                                             alt={doc.name}
                                             fill
                                             className="object-cover"
-                                            sizes="128px"
+                                             sizes="(max-width: 640px) 100vw,
+                                                (max-width: 1024px) 50vw,
+                                                33vw"
                                         />
                                     ) : (
                                         <span className="text-4xl font-bold text-primary">
