@@ -1,12 +1,18 @@
 // @/mock-data/about.ts
-
+import { Info } from "lucide-react";
 export const aboutMockData = {
   banner: {
     title: "About Us",
-    subtitle: "Transforming Healthcare in Bangladesh",
-    bgImage:
-      "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?q=80&w=1200&auto=format&fit=crop",
+    description:
+      "Learn about Sonia Nursing Home & Diagnostic Center, our vision, mission, experienced medical team, and commitment to providing compassionate, high-quality healthcare.",
+    breadcrumb: {
+      label: "Home",
+      href: "/",
+    },
+    currentPage: "About Us",
+    icon: Info,
   },
+
   whoWeAre: {
     title: "Who We Are",
     description:

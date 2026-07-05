@@ -1,3 +1,4 @@
+import { Newspaper } from "lucide-react";
 export interface BlogPost {
   id: number;
   slug: string;
@@ -13,7 +14,7 @@ export interface BlogPost {
   content: string;
 }
 
-export const BlogPost: BlogPost[] = [
+export const blogPosts: BlogPost[] = [
   {
     id: 1,
     slug: "tips-for-heart-healthy",
@@ -29,14 +30,14 @@ export const BlogPost: BlogPost[] = [
       "https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?q=80&w=600&auto=format&fit=crop",
     tags: ["Cardiology", "Heart Health", "Lifestyle"],
     content: `
-Maintaining a healthy heart starts with daily habits. Eating a balanced diet, exercising regularly, avoiding smoking, and managing stress all contribute to better cardiovascular health.
+      Maintaining a healthy heart starts with daily habits. Eating a balanced diet, exercising regularly, avoiding smoking, and managing stress all contribute to better cardiovascular health.
 
-### Healthy Lifestyle
-A heart-friendly lifestyle includes regular physical activity, sufficient sleep, and limiting processed foods.
+      ### Healthy Lifestyle
+      A heart-friendly lifestyle includes regular physical activity, sufficient sleep, and limiting processed foods.
 
-### Regular Checkups
-Routine health screenings help identify risk factors such as high blood pressure and cholesterol before they become serious.
-`,
+      ### Regular Checkups
+      Routine health screenings help identify risk factors such as high blood pressure and cholesterol before they become serious.
+      `,
   },
   {
     id: 2,
@@ -53,17 +54,17 @@ Routine health screenings help identify risk factors such as high blood pressure
       "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?q=80&w=600&auto=format&fit=crop",
     tags: ["Child Care", "Growth", "Paediatrics"],
     content: `
-Every child develops at their own pace, but developmental milestones provide useful guidance for parents.
+      Every child develops at their own pace, but developmental milestones provide useful guidance for parents.
 
-### Physical Growth
-Children gradually improve motor skills such as crawling, walking, and running.
+      ### Physical Growth
+      Children gradually improve motor skills such as crawling, walking, and running.
 
-### Cognitive Development
-Language, memory, and problem-solving skills improve rapidly during early childhood.
+      ### Cognitive Development
+      Language, memory, and problem-solving skills improve rapidly during early childhood.
 
-### Emotional Development
-Positive family interaction helps children develop confidence and social skills.
-`,
+      ### Emotional Development
+      Positive family interaction helps children develop confidence and social skills.
+      `,
   },
   {
     id: 3,
@@ -161,4 +162,136 @@ Practice mindfulness, regular exercise, and healthy sleep habits.
 Consult a mental health professional if stress becomes overwhelming or persistent.
 `,
   },
+  {
+    id: 7,
+    slug: "mental-health-coping-stress",
+    title: "Mental Health Awareness: Coping with Daily Stress",
+    excerpt:
+      "Psychological insights and actionable exercises to protect your mental well-being against professional and personal anxieties.",
+    category: "Psychiatry",
+    department: "Psychiatry",
+    author: "Dr. Farzana Akter",
+    date: "May 28, 2026",
+    readingTime: "8 min",
+    image:
+      "https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=600&auto=format&fit=crop",
+    tags: ["Mental Health", "Stress", "Wellness"],
+    content: `
+Mental health is just as important as physical health.
+
+### Manage Stress
+Practice mindfulness, regular exercise, and healthy sleep habits.
+
+### Seek Help
+Consult a mental health professional if stress becomes overwhelming or persistent.
+`,
+  },
+  {
+    id: 8,
+    slug: "mental-health-coping-stress",
+    title: "Mental Health Awareness: Coping with Daily Stress",
+    excerpt:
+      "Psychological insights and actionable exercises to protect your mental well-being against professional and personal anxieties.",
+    category: "Psychiatry",
+    department: "Psychiatry",
+    author: "Dr. Farzana Akter",
+    date: "May 28, 2026",
+    readingTime: "8 min",
+    image:
+      "https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=600&auto=format&fit=crop",
+    tags: ["Mental Health", "Stress", "Wellness"],
+    content: `
+Mental health is just as important as physical health.
+
+### Manage Stress
+Practice mindfulness, regular exercise, and healthy sleep habits.
+
+### Seek Help
+Consult a mental health professional if stress becomes overwhelming or persistent.
+`,
+  },
+  {
+    id: 9,
+    slug: "mental-health-coping-stress",
+    title: "Mental Health Awareness: Coping with Daily Stress",
+    excerpt:
+      "Psychological insights and actionable exercises to protect your mental well-being against professional and personal anxieties.",
+    category: "Psychiatry",
+    department: "Psychiatry",
+    author: "Dr. Farzana Akter",
+    date: "May 28, 2026",
+    readingTime: "8 min",
+    image:
+      "https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=600&auto=format&fit=crop",
+    tags: ["Mental Health", "Stress", "Wellness"],
+    content: `
+Mental health is just as important as physical health.
+
+### Manage Stress
+Practice mindfulness, regular exercise, and healthy sleep habits.
+
+### Seek Help
+Consult a mental health professional if stress becomes overwhelming or persistent.
+`,
+  },
+  {
+    id: 10,
+    slug: "mental-health-coping-stress",
+    title: "Mental Health Awareness: Coping with Daily Stress",
+    excerpt:
+      "Psychological insights and actionable exercises to protect your mental well-being against professional and personal anxieties.",
+    category: "Psychiatry",
+    department: "Psychiatry",
+    author: "Dr. Farzana Akter",
+    date: "May 28, 2026",
+    readingTime: "8 min",
+    image:
+      "https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=600&auto=format&fit=crop",
+    tags: ["Mental Health", "Stress", "Wellness"],
+    content: `
+Mental health is just as important as physical health.
+
+### Manage Stress
+Practice mindfulness, regular exercise, and healthy sleep habits.
+
+### Seek Help
+Consult a mental health professional if stress becomes overwhelming or persistent.
+`,
+  },
+  {
+    id: 11,
+    slug: "mental-health-coping-stress",
+    title: "Mental Health Awareness: Coping with Daily Stress",
+    excerpt:
+      "Psychological insights and actionable exercises to protect your mental well-being against professional and personal anxieties.",
+    category: "Psychiatry",
+    department: "Psychiatry",
+    author: "Dr. Farzana Akter",
+    date: "May 28, 2026",
+    readingTime: "8 min",
+    image:
+      "https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=600&auto=format&fit=crop",
+    tags: ["Mental Health", "Stress", "Wellness"],
+    content: `
+Mental health is just as important as physical health.
+
+### Manage Stress
+Practice mindfulness, regular exercise, and healthy sleep habits.
+
+### Seek Help
+Consult a mental health professional if stress becomes overwhelming or persistent.
+`,
+  },
 ];
+
+export const blogBanner = {
+  title: "Medical Insights & Health Feed",
+  description:
+    "Read professional medical columns, wellness guidelines, and the latest healthcare insights from our experienced doctors and specialists.",
+  breadcrumb: {
+    label: "Home",
+    href: "/",
+  },
+  currentPage: "Blogs",
+  icon: Newspaper,
+};

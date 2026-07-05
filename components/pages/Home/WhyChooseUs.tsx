@@ -38,8 +38,8 @@ export default function WhyChooseUs() {
         <section className="py-24 bg-white font-sans">
             <div className="mx-auto container px-6 md:px-8">
 
-                {/* SECTION HEADER */}
-                <div className="text-center max-w-7xl mx-auto space-y-3 mb-16">
+                {/* SECTION HEADER max-w-7xl */}
+                <div className="text-center container mx-auto space-y-3 mb-16">
                     <span className="text-sky-600 font-bold text-xs sm:text-sm tracking-widest uppercase bg-sky-50 px-3 py-1 rounded-full">
                         Why Choose Sonia Nursing Home
                     </span>

@@ -1,361 +1,204 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Link from 'next/link';
+import { Phone, Mail, Clock, MapPin, ExternalLink, ArrowRight } from 'lucide-react';
 import {
-    Phone,
-    Mail,
-    MapPin,
-    Clock,
-    ArrowUp,
-    Send,
-    ShieldCheck,
-    ExternalLink
-} from 'lucide-react';
-import {
-    FaFacebookF,
     FaInstagram,
     FaYoutube,
-    FaLinkedinIn
+    FaFacebook,
+    FaXTwitter,
+    FaLinkedin
 } from 'react-icons/fa6';
-
-// ==========================================
-// TYPES & INTERFACES
-// ==========================================
-interface FooterLink {
-    label: string;
-    href: string;
-    isExternal?: boolean;
-}
-
-interface LinkColumn {
-    title: string;
-    links: FooterLink[];
-}
-
-interface ContactDetail {
-    icon: React.ComponentType<{ className?: string }>;
-    title: string;
-    lines: string[];
-}
-
-// ==========================================
-// NAVIGATION DATA
-// ==========================================
-const QUICK_LINKS: LinkColumn = {
-    title: 'Quick Links',
-    links: [
-        { label: 'Home', href: '/' },
-        { label: 'About Us', href: '/about' },
-        { label: 'Our Doctors', href: '/doctors' },
-        { label: 'Departments', href: '/departments' },
-        { label: 'Services', href: '/services' },
-        { label: 'Health Packages', href: '/packages' },
-        { label: 'Contact', href: '/contact' },
-    ],
-};
-
-const MEDICAL_SERVICES: LinkColumn = {
-    title: 'Medical Services',
-    links: [
-        { label: 'Cardiology', href: '/services/cardiology' },
-        { label: 'Gynecology & Obstetrics', href: '/services/gynecology' },
-        { label: 'Orthopedics', href: '/services/orthopedics' },
-        { label: 'Pediatrics', href: '/services/pediatrics' },
-        { label: 'General Surgery', href: '/services/general-surgery' },
-        { label: 'Emergency Care', href: '/services/emergency' },
-        { label: 'Diagnostic Services', href: '/services/diagnostics' },
-    ],
-};
-
-const SOCIAL_LINKS = [
-    { icon: FaFacebookF, href: 'https://facebook.com', label: 'Facebook' },
-    { icon: FaInstagram, href: 'https://instagram.com', label: 'Instagram' },
-    { icon: FaYoutube, href: 'https://youtube.com', label: 'YouTube' },
-    { icon: FaLinkedinIn, href: 'https://linkedin.com', label: 'LinkedIn' },
-];
-
-const CONTACT_INFO: ContactDetail[] = [
-    {
-        icon: MapPin,
-        title: 'Location',
-        lines: ['New Bus Terminal', 'Tangail, Bangladesh'],
-    },
-    {
-        icon: Phone,
-        title: 'Emergency Contact',
-        lines: ['Unit-1: +880 1234 567890', 'Unit-2: +880 1234 567891'],
-    },
-    {
-        icon: Mail,
-        title: 'Email Address',
-        lines: ['sonianursinghometg@gmail.com'],
-    },
-    // {
-    //     icon: Clock,
-    //     title: 'Working Hours',
-    //     lines: ['24/7 Emergency & Ambulance', 'Diagnostics: 7:00 AM - 10:00 PM'],
-    // },
-];
-
-const LEGAL_LINKS: FooterLink[] = [
-    { label: 'Privacy Policy', href: '/privacy' },
-    { label: 'Terms & Conditions', href: '/terms' },
-    { label: 'Sitemap', href: '/sitemap' },
-];
+import { SoniaLogo } from '../shared/SoniaLogo';
 
 export default function Footer() {
-    const [email, setEmail] = useState('');
-    const [isSubscribed, setIsSubscribed] = useState(false);
-    const [showScrollTop, setShowScrollTop] = useState(false);
-
-    // Monitor scroll progression for "Scroll to Top" visibility
-    useEffect(() => {
-        const handleScroll = () => {
-            setShowScrollTop(window.scrollY > 400);
-        };
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
-    const handleSubscribe = (e: React.FormEvent) => {
-        e.preventDefault();
-        if (email.trim()) {
-            setIsSubscribed(true);
-            setEmail('');
-            setTimeout(() => setIsSubscribed(false), 5000);
-        }
-    };
-
-    const scrollToTop = () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
-
     return (
-        <footer className="relative bg-white text-slate-600 border-t border-slate-100 font-sans tracking-tight overflow-hidden selection:bg-sky-500/10 selection:text-primary">
-            {/* Premium subtle gradient overlay */}
-            <div className="absolute inset-0 bg-radial-[at_top_right] from-sky-50/30 via-transparent to-transparent pointer-events-none" />
+        <footer className="relative bg-primary/70 text-white pt-20 pb-12 overflow-hidden font-sans antialiased selection:bg-cyan-500/20 selection:text-cyan-300 ">
 
-            {/* Main Footer Content Grid */}
-            <div className="max-w-7xl mx-auto px-6 pt-20 pb-12 relative z-10 lg:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 pb-16 border-b border-slate-100">
+            {/* ১. ব্যাকগ্রাউন্ড গ্লো/সার্কেল ইফেক্ট bg-[#0b1e36] */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-150 bg-[#14355a]/60 rounded-full blur-[140px] opacity-70 pointer-events-none z-0" />
 
-                    {/* Column 1: Brand & Credential Statement */}
-                    <div className="lg:col-span-3 space-y-6">
-                        <div className="space-y-3">
-                            <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center shadow-lg shadow-primary/10 group transition-transform duration-300 hover:scale-105">
-                                    <div className="w-4 h-4 rounded-full border-2 border-sky-400 animate-pulse" />
-                                </div>
-                                <span className="font-bold text-xl text-primary leading-tight tracking-tight">
-                                    Sonia <span className="text-sky-500 font-medium">Nursing Home</span>
-                                </span>
-                            </div>
-                            <p className="text-xs font-semibold text-slate-400 tracking-wider uppercase">
-                                & Diagnostic Centre
-                            </p>
-                        </div>
-
-                        <p className="text-sm leading-relaxed text-slate-500 max-w-sm">
-                            Providing enterprise-grade medical excellence, advanced diagnostics, and compassionate patient care around the clock in Tangail.
-                        </p>
-
-                        {/* 24/7 Emergency Badge */}
-                        <div className="inline-flex items-center gap-2.5 px-3.5 py-2 bg-rose-50 border border-rose-100 rounded-full">
-                            <span className="relative flex h-2 w-2">
-                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
-                                <span className="relative inline-flex rounded-full h-2 w-2 bg-rose-500"></span>
-                            </span>
-                            <span className="text-xs font-semibold text-rose-700 tracking-wide uppercase">
-                                24/7 Emergency Trauma Care
-                            </span>
-                        </div>
-
-                        {/* Social Media Integration */}
-                        <div className="flex items-center gap-3 pt-2">
-                            {SOCIAL_LINKS.map((social) => {
-                                const Icon = social.icon;
-                                return (
-                                    <a
-                                        key={social.label}
-                                        href={social.href}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        aria-label={`Follow Sonia Nursing Home on ${social.label}`}
-                                        className="p-2.5 rounded-xl border border-slate-200 bg-white text-slate-500 hover:text-primary hover:border-primary hover:bg-slate-50/50 shadow-xs transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center"
-                                    >
-                                        <Icon className="w-4 h-4" />
-                                    </a>
-                                );
-                            })}
-                        </div>
-                    </div>
-
-                    {/* Column 2: Navigation Hierarchy */}
-                    <div className="lg:col-span-2 lg:pl-4">
-                        <h3 className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">
-                            {QUICK_LINKS.title}
-                        </h3>
-                        <ul className="space-y-3.5" role="list">
-                            {QUICK_LINKS.links.map((link) => (
-                                <li key={link.label}>
-                                    <Link
-                                        href={link.href}
-                                        className="group relative inline-flex items-center text-sm text-slate-500 hover:text-primary transition-colors duration-200"
-                                    >
-                                        <span>{link.label}</span>
-                                        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-sky-400 transition-all duration-300 group-hover:w-full" />
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* Column 3: Medical Specializations */}
-                    <div className="lg:col-span-2">
-                        <h3 className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">
-                            {MEDICAL_SERVICES.title}
-                        </h3>
-                        <ul className="space-y-3.5" role="list">
-                            {MEDICAL_SERVICES.links.map((link) => (
-                                <li key={link.label}>
-                                    <Link
-                                        href={link.href}
-                                        className="group relative inline-flex items-center text-sm text-slate-500 hover:text-primary transition-colors duration-200"
-                                    >
-                                        <span>{link.label}</span>
-                                        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-sky-400 transition-all duration-300 group-hover:w-full" />
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* Column 4: Contact Context */}
-                    <div className="lg:col-span-2 space-y-5">
-                        <h3 className="text-sm font-semibold text-primary tracking-wider uppercase">
-                            Contact Info
-                        </h3>
-                        <div className="space-y-4">
-                            {CONTACT_INFO.map((info, idx) => {
-                                const Icon = info.icon;
-                                return (
-                                    <div key={idx} className="flex gap-3 text-sm group">
-                                        <div className="mt-0.5 p-1.5 rounded-lg bg-slate-50 text-slate-400 group-hover:text-sky-500 group-hover:bg-sky-50 transition-colors duration-300 h-fit">
-                                            <Icon className="w-3.5 h-3.5" />
-                                        </div>
-                                        <div>
-                                            <span className="block font-medium text-primary text-xs mb-0.5">
-                                                {info.title}
-                                            </span>
-                                            {info.lines.map((line, lIdx) => (
-                                                <p key={lIdx} className="text-slate-500 leading-tight text-xs+">
-                                                    {line}
-                                                </p>
-                                            ))}
-                                        </div>
-                                    </div>
-                                );
-                            })}
-                        </div>
-
-                        {/* Google Maps External Routing Trigger */}
-                        <a
-                            href="https://maps.google.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 mt-2 px-4 py-2 text-xs font-semibold text-primary bg-slate-50 border border-slate-200 rounded-xl hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 group w-full justify-center shadow-xs"
-                        >
-                            <span>Find Us On Google Maps</span>
-                            <ExternalLink className="w-3 h-3 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                        </a>
-                    </div>
-
-                    {/* Column 5: Newsletter & Communication Channel */}
-                    <div className="lg:col-span-3 space-y-4">
-                        <h3 className="text-sm font-semibold text-primary tracking-wider uppercase">
-                            Stay Informed
-                        </h3>
-                        <p className="text-sm text-slate-500 leading-relaxed">
-                            Subscribe to our monthly healthcare newsletter for clinical updates, wellness tips, and diagnostic checkup packages.
-                        </p>
-
-                        <form onSubmit={handleSubscribe} className="space-y-2.5">
-                            <div className="relative flex items-center">
-                                <input
-                                    type="email"
-                                    required
-                                    placeholder="Enter your professional email"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-800 placeholder-slate-400 focus:outline-hidden focus:border-primary focus:bg-white transition-all duration-300 pr-12 shadow-xs"
-                                    aria-label="Email Address for newsletter"
-                                />
-                                <button
-                                    type="submit"
-                                    aria-label="Subscribe to newsletter"
-                                    className="absolute right-1.5 top-1.5 bottom-1.5 px-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-all duration-300 active:scale-95 flex items-center justify-center group"
-                                >
-                                    <Send className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                                </button>
-                            </div>
-
-                            {isSubscribed && (
-                                <div className="flex items-center gap-1.5 text-xs text-emerald-600 bg-emerald-50 border border-emerald-100 rounded-lg p-2 animate-fade-in">
-                                    <ShieldCheck className="w-3.5 h-3.5" />
-                                    <span>Subscription confirmed securely. Thank you!</span>
-                                </div>
-                            )}
-
-                            <p className="text-[11px] text-slate-400 leading-normal">
-                                Your data privacy is guaranteed. Opt-out seamlessly at any moment with a single click.
-                            </p>
-                        </form>
-                    </div>
-
-                </div>
-
-                {/* Bottom Infrastructure: Legal & Attribution */}
-                <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-medium text-slate-400">
-                    <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6 text-center md:text-left">
-                        <span>
-                            © {new Date().getFullYear()} Sonia Nursing Home & Diagnostic Centre. All Rights Reserved.
-                        </span>
-                        <div className="flex items-center gap-4">
-                            {LEGAL_LINKS.map((link) => (
-                                <Link
-                                    key={link.label}
-                                    href={link.href}
-                                    className="hover:text-primary transition-colors duration-200"
-                                >
-                                    {link.label}
-                                </Link>
-                            ))}
-                        </div>
-                    </div>
-
-                    <div className="flex items-center gap-1.5 bg-slate-50/50 border border-slate-100 px-3 py-1.5 rounded-lg text-slate-400">
-                        <span>Engineered by</span>
-                        <a
-                            href="#"
-                            className="text-primary font-semibold hover:text-sky-500 transition-colors duration-200"
-                            rel="noopener noreferrer"
-                        >
-                            Enterprise Systems Division
-                        </a>
-                    </div>
-                </div>
+            {/* ২. বড় ওয়াটারমার্ক টেক্সট text-[#132d4a]/25 */}
+            <div className="absolute bottom-6 left-0 w-full text-center select-none pointer-events-none z-0 overflow-hidden px-4 hidden sm:block">
+                <h1 className="text-6xl md:text-8xl lg:text-[13rem] font-black text-secondary/5 tracking-wider uppercase leading-none select-none">
+                    Sonia Nursing Home
+                </h1>
             </div>
 
-            {/* Floating Action Button: Back to Hierarchy Root */}
-            <button
-                onClick={scrollToTop}
-                aria-label="Scroll back to top of page"
-                className={`fixed bottom-6 right-6 p-3 bg-primary text-white rounded-full shadow-xl transition-all duration-300 z-50 hover:bg-primary/90 hover:-translate-y-1 hover:scale-105 group ${showScrollTop ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-                    }`}
-            >
-                <ArrowUp className="w-4 h-4 transition-transform duration-300 group-hover:-translate-y-0.5" />
-            </button>
+            {/* ৩. মেইন কন্টেন্ট কন্টেইনার */}
+            <div className="relative container mx-auto px-6 z-10">
+
+                {/* টপ সেকশন: ৩টি কলাম */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 items-start text-center md:text-left mb-16">
+
+                    {/* বাম কলাম: কন্টাক্ট এবং সোশ্যাল মিডিয়া */}
+                    <div className="space-y-6">
+                        <div className="space-y-2">
+                            <h4 className="font-bold tracking-wider text-cyan-400 uppercase text-xs">Emergency Helpline</h4>
+                            <div className="flex items-center justify-center md:justify-start gap-2 bg-slate-900/40 border border-slate-800/60 backdrop-blur-xs px-4 py-2.5 rounded-xl w-fit mx-auto md:mx-0">
+                                <Clock className="w-4 h-4 text-rose-400 animate-pulse" />
+                                <span className="text-xs font-semibold uppercase tracking-wider text-rose-400">Open 24 Hours Daily</span>
+                            </div>
+                        </div>
+
+                        {/* যোগাযোগের মাধ্যমসমূহ */}
+                        <div className="space-y-3.5 pt-1">
+                            <div className="flex items-center justify-center md:justify-start gap-3 text-sm text-gray-300 group">
+                                <div className="p-2 rounded-lg bg-slate-900/50 text-cyan-400 group-hover:bg-cyan-500 group-hover:text-slate-950 transition-all duration-300">
+                                    <Mail className="w-4 h-4" />
+                                </div>
+                                <a href="mailto:sonianursinghometg@gmail.com" className="hover:text-cyan-400 transition-colors duration-200 font-medium">
+                                    sonianursinghometg@gmail.com
+                                </a>
+                            </div>
+
+                            <div className="flex items-start justify-center md:justify-start gap-3 text-sm text-gray-300 group">
+                                <div className="p-2 rounded-lg bg-slate-900/50 text-cyan-400 group-hover:bg-cyan-500 group-hover:text-slate-950 transition-all duration-300 shrink-0 mt-0.5">
+                                    <Phone className="w-4 h-4" />
+                                </div>
+                                <div className="flex flex-col text-xs+ tracking-wide">
+                                    <span className="text-gray-400 font-medium text-xs uppercase mb-0.5">Unit 1 Hotline</span>
+                                    <a href="tel:+8801716836683" className="hover:text-cyan-300 transition-colors font-semibold text-sm">+880 1716-836683</a>
+                                    <a href="tel:+8801315525908" className="hover:text-cyan-300 transition-colors font-semibold text-sm">+880 1315-525908</a>
+                                </div>
+                            </div>
+
+                            <div className="flex items-start justify-center md:justify-start gap-3 text-sm text-gray-300 group">
+                                <div className="p-2 rounded-lg bg-slate-900/50 text-cyan-400 group-hover:bg-cyan-500 group-hover:text-slate-950 transition-all duration-300 shrink-0 mt-0.5">
+                                    <Phone className="w-4 h-4" />
+                                </div>
+                                <div className="flex flex-col text-xs+ tracking-wide">
+                                    <span className="text-gray-400 font-medium text-xs uppercase mb-0.5">Unit 2 Hotline</span>
+                                    <a href="tel:+8801315525906" className="hover:text-cyan-300 transition-colors font-semibold text-sm">+880 1315-525906</a>
+                                    <a href="tel:+8801315525907" className="hover:text-cyan-300 transition-colors font-semibold text-sm">+880 1315-525907</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* সোশ্যাল আইকনসমূহ */}
+                        <div className="flex items-center justify-center md:justify-start gap-3 pt-2">
+                            {[
+                                { Icon: FaFacebook, href: '#' },
+                                { Icon: FaXTwitter, href: '#' },
+                                { Icon: FaYoutube, href: '#' },
+                                { Icon: FaInstagram, href: '#' },
+                                { Icon: FaLinkedin, href: '#' }
+                            ].map(({ Icon, href }, idx) => (
+                                <a
+                                    key={idx}
+                                    href={href}
+                                    className="p-2.5 rounded-xl bg-slate-900/40 border border-slate-800 text-gray-400 hover:text-cyan-400 hover:border-cyan-500/40 shadow-xs transition-all duration-300 hover:-translate-y-0.5"
+                                >
+                                    <Icon className="w-4 h-4" />
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* মিডল কলাম: ব্র্যান্ড লোগো এবং কোয়েরি বাটন */}
+                    <div className="flex flex-col items-center justify-center space-y-6 md:pt-4">
+                        <div className="text-center group flex flex-col items-center">
+                            <div className="mb-4 transform transition-transform duration-500 group-hover:scale-102">
+                                <SoniaLogo />
+                            </div>
+                            <h2 className="text-2xl md:text-3xl font-light  tracking-tight text-white uppercase leading-none">
+                                <span className="text-cyan-400 font-medium">Sonia</span> Nursing Home
+                            </h2>
+                            <p className="text-[10px] tracking-[0.3em] text-gray-400 font-bold uppercase mt-1.5">
+                                & Diagnostic Centre
+                            </p>
+                            {/* <p className="text-xs text-secondary/80 italic mt-3 font-serif">Transforming Healthcare in Tangail</p> */}
+                            <p className="text-xs text-cyan-400/70 italic mt-3 font-serif">Transforming Healthcare in Tangail</p>
+                        </div>
+
+                        {/* Send Query Button */}
+                        <Link
+                            href="/contact"
+                            className="relative overflow-hidden inline-flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-slate-950 text-xs font-bold uppercase tracking-wider px-10 py-3.5 rounded-full shadow-lg shadow-cyan-500/10 transition-all duration-300 active:scale-95 group"
+                        >
+                            <span>Send Query</span>
+                            <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
+                        </Link>
+                    </div>
+
+                    {/* ডান কলাম: অ্যাড্রেস এবং কপিরাইট */}
+                    <div className="space-y-6 md:text-right text-sm text-gray-300">
+                        <h4 className="font-bold tracking-wider text-cyan-400 uppercase text-xs">Hospital Locations</h4>
+                        <div className="space-y-4 md:ml-auto max-w-sm">
+                            <div className="space-y-1 group">
+                                <div className="flex items-center justify-center md:justify-end gap-1.5 text-xs font-bold uppercase tracking-widest text-gray-400">
+                                    <MapPin className="w-3 h-3 text-cyan-400" />
+                                    <span>Unit 1</span>
+                                </div>
+                                <p className="leading-relaxed text-gray-300 hover:text-white transition-colors duration-200">
+                                    New Bus Terminal, Tangail 1900, Bangladesh
+                                </p>
+                            </div>
+
+                            <div className="space-y-1 group">
+                                <div className="flex items-center justify-center md:justify-end gap-1.5 text-xs font-bold uppercase tracking-widest text-gray-400">
+                                    <MapPin className="w-3 h-3 text-cyan-400" />
+                                    <span>Unit 2</span>
+                                </div>
+                                <p className="leading-relaxed text-gray-300 hover:text-white transition-colors duration-200">
+                                    New Bus Terminal, Opposite of Janata Bank, Tangail 1900, Bangladesh
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Google Maps Bridge Integration */}
+                        <div className="pt-2 md:ml-auto max-w-50">
+                            <a
+                                href="https://maps.app.goo.gl/NubyURogB4CsvKdT9"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1.5 text-xs font-semibold text-gray-400 hover:text-cyan-400 transition-colors duration-200"
+                            >
+                                <span>View on Map Blueprint</span>
+                                <ExternalLink className="w-3 h-3" />
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <hr className="border-slate-800/60 my-8 relative z-10" />
+
+                {/* বটম সেকশন: কুইক লিংকস */}
+                <div className="flex flex-wrap justify-center gap-x-6 gap-y-3.5 text-xs font-medium text-gray-400 max-w-5xl mx-auto relative z-10">
+                    {[
+                        { label: 'Find a Doctor', href: '/find-doctor' },
+                        { label: 'Request an Appointment', href: '/appointment' },
+                        { label: 'Online Report', href: '/report' },
+                        { label: 'Career Opportunities', href: '/career' },
+                        { label: 'Medical Specialties', href: '/speciality' },
+                        { label: 'Health Packages', href: '/packages' },
+                        { label: 'News & Media', href: '/news' },
+                        { label: 'Medical Blogs', href: '/blogs' },
+                        { label: 'About Our Center', href: '/about' },
+                        { label: 'Patient Stories', href: '/stories' },
+                        { label: 'Patient & Visitor Guide', href: '/guide' },
+                        { label: 'Privacy Policy', href: '/privacy' },
+                        { label: 'Terms of Service', href: '/terms' },
+                    ].map((link, idx) => (
+                        <Link
+                            key={idx}
+                            href={link.href}
+                            className="hover:text-cyan-400 transition-colors duration-200 relative group"
+                        >
+                            <span>{link.label}</span>
+                            <span className="absolute left-0 -bottom-0.5 w-0 h-px bg-cyan-400 transition-all duration-300 group-hover:w-full" />
+                        </Link>
+                    ))}
+                </div>
+
+                {/* কপিরাইট স্তর */}
+                <p className="text-[11px] text-center text-slate-500 tracking-wide font-medium mt-10 relative z-10">
+                    © {new Date().getFullYear()} Sonia Nursing Home & Diagnostic Centre. All rights reserved. Built with Enterprise Infrastructure.
+                </p>
+
+            </div>
         </footer>
     );
 }

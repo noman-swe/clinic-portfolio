@@ -7,7 +7,7 @@ interface MrcpProps {
 export default function MrcpCenter({ data }: MrcpProps) {
     return (
         <section className="py-20 bg-slate-50 px-6">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="container mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <div className="lg:col-span-7 space-y-6 order-2 lg:order-1">
                     <h2 className="text-2xl md:text-4xl font-bold text-primary tracking-tight leading-snug">
                         {data.title}
@@ -17,8 +17,8 @@ export default function MrcpCenter({ data }: MrcpProps) {
                     </p>
                 </div>
                 <div className="lg:col-span-5 relative h-72 sm:h-96 w-full rounded-xl overflow-hidden shadow-xl border border-slate-200 order-1 lg:order-2">
-                    <Image src={data.image} alt="MRCP Evaluation" fill  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw,
-         33vw" className="object-cover"  />
+                    <Image src={data.image} alt="MRCP Evaluation" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw,
+         33vw" className="object-cover" />
                 </div>
             </div>
         </section>

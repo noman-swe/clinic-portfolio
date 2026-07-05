@@ -10,20 +10,34 @@ import {
   AlertCircle,
   Smile,
   Sparkles,
-  Droplet, 
+  Droplet,
   Scan,
   Apple,
-  Ear, 
+  Ear,
   Egg,
-  FileText, 
-  Radio, 
+  FileText,
+  Radio,
   Eye,
   Bone,
-  Brain, 
+  Brain,
   TestTubes,
   ShieldAlert,
-  HelpCircle, 
+  HelpCircle,
 } from "lucide-react";
+
+import type { LucideIcon } from "lucide-react";
+
+export const specialitiesBanner = {
+  title: "Our Specialities",
+  description:
+    "Explore our comprehensive range of medical specialties, delivered by experienced consultants using advanced diagnostic and treatment facilities to ensure quality patient care.",
+  breadcrumb: {
+    label: "Home",
+    href: "/",
+  },
+  currentPage: "Specialities",
+  icon: Stethoscope,
+};
 
 export const specialities = [
   "Accident & Emergency",
@@ -73,7 +87,7 @@ export const specialities = [
 ];
 
 // সবগুলো স্পেশালিটির জন্য প্রাসঙ্গিক আইকন ম্যাপার
-export const specialityIcons: Record<string, React.ComponentType<any>> = {
+export const specialityIcons: Record<string, LucideIcon> = {
   "Accident & Emergency": BoneFracture,
   "Anesthesia and Pain Medicine": Stethoscope,
   "Cancer Care Centre": Activity,
@@ -121,6 +135,6 @@ export const specialityIcons: Record<string, React.ComponentType<any>> = {
 };
 
 // কোনো আইকন ম্যাচ না করলে ডিবল্ট হিসেবে HelpCircle আইকনটি দেখাবে
-export function getSpecialityIcon(name: string) {
+export function getSpecialityIcon(name: string): LucideIcon {
   return specialityIcons[name] || HelpCircle;
 }

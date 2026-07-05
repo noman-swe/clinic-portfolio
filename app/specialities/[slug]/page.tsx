@@ -18,12 +18,10 @@ import {
     Mail,
 } from "lucide-react";
 
-// আপনার আগের ইম্পোর্টসমূহ
 import { specialities, getSpecialityIcon } from "@/mock-data/specialities";
-
-// নতুন তৈরি করা ডাইনামিক কন্টেন্ট ডাটা ইম্পোর্ট
 import { departmentServices, patientGuidelines, pageLabels } from "@/mock-data/speciality-details";
 import { getInitialsOfNames } from "@/utils/sharedFunc";
+import SuperHero from "@/components/shared/SuperHero";
 
 // ডক্টরদের ডেমো ডাটা
 const demoDoctors = [
@@ -37,7 +35,6 @@ const demoDoctors = [
     { id: 8, name: "Dr. Ishrat Zahan", designation: "Medical Officer", image: "" },
 ];
 
-// Lucide আইকন ডাইনামিক রেন্ডার করার জন্য হেল্পার ম্যাপ
 const ServiceIconMap = {
     Clock: Clock,
     ShieldAlert: ShieldAlert,
@@ -70,7 +67,6 @@ export default function SpecialityDetailPage() {
         setOpenAccordion(openAccordion === id ? null : id);
     };
 
-    // ৪৪টি স্পেশালিটির ডাইনামিক FAQ স্ট্রাকচার
     const dynamicFaqs = [
         {
             id: "overview",
@@ -89,31 +85,27 @@ export default function SpecialityDetailPage() {
         }
     ];
 
+
+
+    const bannerData = {
+        title: currentSpeciality,
+        description: pageLabels.heroSubtitleSuffix,
+        breadcrumb: {
+            label: "Specialities",
+            href: "/specialities",
+        },
+        currentPage: currentSpeciality,
+        icon: SelectedIcon,
+    };
+
     return (
         <div className="bg-slate-50 min-h-screen font-sans">
-
             {/* Dynamic Hero/Banner Section */}
-            <div className="bg-primary text-white py-20 px-6 relative overflow-hidden">
-                <div className="absolute inset-0 bg-radial from-white/5 to-transparent pointer-events-none" />
-                <div className="max-w-7xl mx-auto flex flex-col items-center text-center relative z-10 space-y-4">
-                    <div className="p-4 bg-white/10 rounded-full text-[#4FD2FF] mb-2 animate-pulse">
-                        <SelectedIcon size={40} strokeWidth={1.5} />
-                    </div>
-                    <span className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-sky-300">
-                        {pageLabels.heroTag}
-                    </span>
-                    <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-white max-w-4xl">
-                        {currentSpeciality}
-                    </h1>
-                    <p className="text-slate-200 max-w-2xl mx-auto text-sm md:text-base">
-                        {pageLabels.heroSubtitleSuffix}
-                    </p>
-                </div>
-            </div>
+            <SuperHero data={bannerData} />
 
-            <div className="max-w-7xl mx-auto px-6 py-12 space-y-16">
+            <div className="container mx-auto px-6 py-12 space-y-16">
 
-                {/* ৩. বিভাগীয় পরিচিতি ও সেবাসমূহ (Overview & Services) */}
+                {/* Overview & Services */}
                 <section className="bg-white rounded-xl p-8 shadow-xs border border-slate-100">
                     <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6 flex items-center gap-2">
                         <Activity className="text-sky-500" size={28} /> {pageLabels.servicesTitle}
@@ -137,7 +129,7 @@ export default function SpecialityDetailPage() {
                     </div>
                 </section>
 
-                {/* ৪. চিকিৎসাকৃত রোগসমূহ ও সাধারণ জিজ্ঞাসা (Accordion) */}
+                {/*Accordion */}
                 <section className="bg-white rounded-xl p-8 shadow-xs border border-slate-100">
                     <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6 flex items-center gap-2">
                         <HelpCircle className="text-sky-500" size={28} /> {pageLabels.faqTitle}
@@ -169,7 +161,7 @@ export default function SpecialityDetailPage() {
                     </div>
                 </section>
 
-                {/* ৫. ডাক্তারদের তালিকা (List of Doctors) */}
+                {/* List of Doctors */}
                 <section>
                     <div className="text-center mb-8">
                         <h2 className="text-2xl md:text-3xl font-bold text-primary flex items-center justify-center gap-2">
@@ -218,7 +210,7 @@ export default function SpecialityDetailPage() {
                     </div>
                 </section>
 
-                {/* ৬. গুরুত্বপূর্ণ নির্দেশনা (Important Points) */}
+                {/* Important Points */}
                 <section className="bg-white rounded-xl p-8 shadow-xs border border-slate-100">
                     <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6 border-b pb-4">
                         {pageLabels.guidelinesTitle}
@@ -236,7 +228,7 @@ export default function SpecialityDetailPage() {
                                     <div className="text-slate-600 text-sm space-y-2 leading-relaxed">
                                         <p>{item.description}</p>
 
-                                        {/* মেটাডাটা (যেমন লোকেশন এবং ইমেইল) থাকলে ডাইনামিক্যালি শো করবে */}
+
                                         {item.meta?.location && (
                                             <div className="flex items-center gap-1.5 text-xs font-medium text-primary pt-1">
                                                 <MapPin size={14} className="text-sky-600" />

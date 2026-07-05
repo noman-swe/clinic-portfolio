@@ -119,7 +119,7 @@ function BlogCard({ post }: { post: BlogPost }) {
                         </div>
                         <div className="flex items-center gap-1">
                             <Clock size={14} />
-                            <span>{post.readTime}</span>
+                            <span>{post.readingTime}</span>
                         </div>
                     </div>
 

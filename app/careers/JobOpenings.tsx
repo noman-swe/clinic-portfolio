@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Briefcase, MapPin, CalendarDays } from "lucide-react";
+import { MapPin, CalendarDays } from "lucide-react";
 
 interface Job {
     id: number;
@@ -23,18 +23,18 @@ interface JobOpeningsProps {
 export default function JobOpenings({ data }: JobOpeningsProps) {
     const [selectedDept, setSelectedDept] = useState("All Departments");
 
-    const filteredJobs = selectedDept === "All Departments" 
-        ? data.jobs 
+    const filteredJobs = selectedDept === "All Departments"
+        ? data.jobs
         : data.jobs.filter(job => job.department === selectedDept);
 
     return (
         <section className="py-20 bg-slate-50 font-sans">
-            <div className="mx-auto container px-6 md:px-8 max-w-7xl space-y-12">
-                
+            <div className="mx-auto container px-6 md:px-8 space-y-12">
+
                 {/* Header & Filter */}
                 <div className="flex flex-col md:flex-row justify-between items-center gap-6 border-b border-slate-200 pb-6">
                     <h2 className="text-3xl font-bold text-primary tracking-tight">{data.title}</h2>
-                    
+
                     <div className="w-full sm:w-72">
                         <select
                             value={selectedDept}

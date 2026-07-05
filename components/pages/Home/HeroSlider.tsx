@@ -3,24 +3,22 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronLeft, ChevronRight, Search, Stethoscope, Calendar, FileText, Video, Info } from "lucide-react";
+import { ChevronLeft, ChevronRight, Stethoscope, Calendar, FileText, Video, Info } from "lucide-react";
 
-// স্লাইডারের ডাটা (মেডিকেল রিলেটেড প্রিমিয়াম ইমেজ এবং কন্টেন্ট)
 const slides = [
     {
         id: 1,
         title: "Your Health Is Our First Priority",
         subtitle: "Welcome to Sonia Nursing Home & Diagnostic Centre",
         description: "Providing world-class healthcare services with expert doctors, advanced medical technologies, and compassionate care for you and your family.",
-        image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1920&auto=format&fit=crop", // প্রফেশনাল হসপিটাল ইমেজ
+        image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1920&auto=format&fit=crop",
     },
     {
-        // & Accuracy
         id: 2,
         title: "Advanced Diagnostics ",
         subtitle: "State-of-the-Art Laboratory Services",
         description: "Get precise and accurate lab reports with our high-tech medical machinery under the supervision of highly experienced pathologists.",
-        image: "https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=1920&auto=format&fit=crop", // ল্যাব/ডায়াগনস্টিক ইমেজ
+        image: "https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=1920&auto=format&fit=crop",
     },
 ];
 
@@ -54,7 +52,6 @@ export default function HeroSlider() {
 
 
     return (
-        // আমরা ওভারল্যাপ করার জন্য নিচে পর্যাপ্ত মার্জিন (mb-24 থেকে mb-32) রেখেছি
         <section className="relative w-full ">
             {/* SLIDER WRAPPER */}
             <div className="relative h-137.5 sm:h-150 lg:h-150 xl:h-175 w-full overflow-hidden bg-slate-900">
@@ -64,7 +61,6 @@ export default function HeroSlider() {
                         className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
                             }`}
                     >
-                        {/* Background Image with Dark Overlay for Better Readability */}
                         <div className="absolute inset-0 bg-linear-to-r from-primary/90 via-primary/60 to-transparent z-10" />
                         <Image
                             src={slide.image}
@@ -138,9 +134,6 @@ export default function HeroSlider() {
             </div>
 
             {/* OVERLAPPING ACTION BUTTONS SECTION */}
-            {/* 'absolute w-full bottom-0 translate-y-1/2' এর মাধ্যমে কার্ডগুলো নিখুঁতভাবে 
-        হিরো স্লাইডারের বর্ডার ক্রস করে নিচের সেকশনের উপর প্রো-লেভেলে ওভারল্যাপ (Overlap) করবে। max-w-7xl
-      */}
             <div className="absolute bottom-20 left-1/2 -translate-x-1/2 translate-y-1/2 z-40 w-full container px-6 md:px-8">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-3">
                     {quickActions.map((action, index) => {
@@ -149,21 +142,16 @@ export default function HeroSlider() {
                             <Link
                                 key={index}
                                 href={action.href}
-                                // কার্ডগুলোতে প্রাইমারি নেভি ব্লু এবং হোভারে স্কাই ব্লু থিম দেওয়া হয়েছে
                                 className="group flex lg:flex-col items-center justify-start lg:justify-center text-left lg:text-center p-5 lg:p-6 bg-primary text-white rounded-md shadow-2xl transition-all duration-300 hover:bg-sky-500 hover:text-primary hover:-translate-y-2 gap-4 lg:gap-3 border-b-4 border-sky-500/30 hover:border-primary/20"
                             >
-                                {/* <div> */}
-                                {/* Icon Wrapper */}
                                 <div className="p-3 bg-white/10 rounded-lg text-sky-400 group-hover:bg-primary/10 group-hover:text-primary transition-colors duration-300 shrink-0">
                                     <IconComponent size={24} strokeWidth={2} />
                                 </div>
 
-                                {/* Button Text */}
                                 <span className="text-[13px] sm:text-[14px] font-bold tracking-wide uppercase leading-snug">
                                     {action.name}
                                 </span>
-                                {/* </div> */}
-
+                              
                             </Link>
                         );
                     })}

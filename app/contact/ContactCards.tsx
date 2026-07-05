@@ -37,7 +37,7 @@ export default function ContactCards({ data }: ContactCardsProps) {
                         <p className="text-slate-500 text-sm leading-relaxed mb-3">
                             {item.description}
                         </p>
-                        <span className="text-sm font-semibold text-slate-800 break-words w-full">
+                        <span className="text-sm font-semibold text-slate-800 wrap-break-word w-full">
                             {item.detail}
                         </span>
                     </div>

@@ -14,7 +14,7 @@ export default function ContactFormSection() {
     };
 
     return (
-        <section className="bg-white rounded-xl p-8 shadow-xs border border-slate-100 max-w-4xl mx-auto">
+        <section className="bg-white rounded-xl p-8 shadow-xs border border-slate-100 max-w-5xl mx-auto">
             <div className="text-center mb-8">
                 <h2 className="text-2xl md:text-3xl font-bold text-primary">Send Us A Message</h2>
                 <p className="text-slate-500 text-sm mt-2">Fill out the standard dynamic field parameters to email our front desk coordinator directly.</p>

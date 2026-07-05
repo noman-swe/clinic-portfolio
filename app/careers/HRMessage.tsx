@@ -14,7 +14,7 @@ interface HRMessageProps {
 export default function HRMessage({ data }: HRMessageProps) {
     return (
         <section className="py-20 bg-white font-sans">
-            <div className="mx-auto container px-6 md:px-8 max-w-7xl">
+            <div className="mx-auto container px-6 md:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
 
                     {/* Left Sidebar Profile */}
@@ -25,6 +25,9 @@ export default function HRMessage({ data }: HRMessageProps) {
                                 alt={data.directorName}
                                 fill
                                 className="object-cover object-top"
+                                sizes="(max-width: 768px) 100vw,
+                                        (max-width: 1200px) 50vw,
+                                        33vw"
                             />
                         </div>
                         <h3 className="text-xl font-bold text-primary">{data.directorName}</h3>

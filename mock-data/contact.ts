@@ -1,4 +1,17 @@
+import { Mail } from "lucide-react";
 export const contactMockData = {
+  banner: {
+    title: "We Are Here To Assist You",
+    description:
+      "Have questions about our medical departments, testing parameters, or booking metrics? Reach out directly.",
+    breadcrumb: {
+      label: "Home",
+      href: "/",
+    },
+    currentPage: "Contact Us",
+    icon: Mail,
+  },
+
   infoCards: [
     {
       id: 1,

@@ -30,7 +30,7 @@ export default function Navbar({
     const navItems: NavItem[] = [
         { name: "Home", href: "/" },
         { name: "About Us", href: "/about-us" },
-        { name: "Doctors", href: "/doctors" },
+        { name: "Noticeboard", href: "/notice-board" },
         { name: "Specialities", megaMenu: true },
         { name: "Blogs", href: "/blogs" },
         { name: "Careers", href: "/careers" },

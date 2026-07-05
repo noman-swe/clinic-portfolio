@@ -4,6 +4,7 @@ import { Calendar } from "lucide-react";
 
 interface EventItem {
     id: number;
+    slug: string;
     date: string;
     title: string;
     image: string;
@@ -19,8 +20,8 @@ interface EmployeeEventsProps {
 export default function EmployeeEvents({ data }: EmployeeEventsProps) {
     return (
         <section className="py-20 bg-white font-sans">
-            <div className="mx-auto container px-6 md:px-8 max-w-7xl space-y-12">
-                
+            <div className="mx-auto container px-6 md:px-8 space-y-12">
+
                 {/* Section Title */}
                 <div className="text-center max-w-2xl mx-auto">
                     <h2 className="text-3xl font-bold text-primary tracking-tight">{data.title}</h2>
@@ -32,11 +33,12 @@ export default function EmployeeEvents({ data }: EmployeeEventsProps) {
                     {data.events.map((event) => (
                         <article key={event.id} className="group flex flex-col bg-slate-50 border border-slate-100 rounded-xl overflow-hidden shadow-xs hover:shadow-lg transition-all duration-300">
                             <div className="relative h-48 w-full bg-slate-200 overflow-hidden">
-                                <Image 
-                                    src={event.image} 
-                                    alt={event.title} 
-                                    fill 
+                                <Image
+                                    src={event.image}
+                                    alt={event.title}
                                     className="object-cover group-hover:scale-103 transition-transform duration-500"
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                 />
                             </div>
                             <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
@@ -49,8 +51,8 @@ export default function EmployeeEvents({ data }: EmployeeEventsProps) {
                                         {event.title}
                                     </h3>
                                 </div>
-                                <Link 
-                                    href={`/careers/events/${event.id}`}
+                                <Link
+                                    href={`/careers/events/${event.slug}`}
                                     className="inline-block text-xs font-bold text-sky-600 hover:text-primary transition-colors pt-2 uppercase tracking-wider"
                                 >
                                     Read More →

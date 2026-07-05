@@ -84,3 +84,4 @@ export const pageLabels = {
     "dedicated consultant specialists, committed to delivering expert medical care with compassion and excellence.",
   guidelinesTitle: "Important Patient Guidelines",
 };
+
