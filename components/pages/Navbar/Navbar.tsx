@@ -113,7 +113,7 @@ export default function Navbar({
 
                         <Link
                             href="/contact"
-                            className="bg-primary px-6 py-3 font-semibold text-white text-sm rounded-sm transition-all duration-300 hover:ring-2 hover:ring-primary hover:ring-offset-1 hover:ring-offset-white"
+                            className="bg-primary px-6 py-3 font-semibold text-white text-sm rounded-sm transition-all duration-300 hover:ring-2 hover:ring-primary hover:ring-offset-1 hover:ring-offset-white hidden md:block"
                         >
                             Send Query
                         </Link>
