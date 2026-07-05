@@ -22,13 +22,13 @@ const slides = [
     },
 ];
 
-// ওভারল্যাপিং কুইক অ্যাকশন বাটনের ডাটা
+
 const quickActions = [
-    { name: "FIND A DOCTOR", href: "/doctors", icon: Stethoscope },
-    { name: "REQUEST AN APPOINTMENT", href: "/appointment", icon: Calendar },
-    { name: "ONLINE REPORT", href: "/reports", icon: FileText },
-    { name: "TELE-ONLINE", href: "/tele-health", icon: Video },
-    { name: "PATIENT & VISITORS GUIDE", href: "/guide", icon: Info },
+    { name: "FIND A DOCTOR", href: "/under-construction", icon: Stethoscope },
+    { name: "REQUEST AN APPOINTMENT", href: "/under-construction", icon: Calendar },
+    { name: "ONLINE REPORT", href: "/under-construction", icon: FileText },
+    { name: "TELE-ONLINE", href: "/under-construction", icon: Video },
+    { name: "PATIENT & VISITORS GUIDE", href: "/under-construction", icon: Info },
 ];
 
 export default function HeroSlider() {
@@ -42,7 +42,6 @@ export default function HeroSlider() {
         setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
     };
 
-    // অটো-প্লে স্লাইডার (প্রতি ৫ সেকেন্ড পর পর চেঞ্জ হবে)
     useEffect(() => {
         const timer = setInterval(() => {
             nextSlide();
@@ -70,7 +69,6 @@ export default function HeroSlider() {
                             className="object-cover object-center"
                         />
 
-                        {/* Slide Content */}
                         <div className="absolute inset-0 z-20 flex items-center">
                             <div className="mx-auto container w-full px-6 md:px-8">
                                 <div className="max-w-2xl text-white space-y-4 md:space-y-6 animate-in fade-in slide-in-from-bottom-5 duration-700">
