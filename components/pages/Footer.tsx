@@ -168,19 +168,19 @@ export default function Footer() {
                 {/* বটম সেকশন: কুইক লিংকস */}
                 <div className="flex flex-wrap justify-center gap-x-6 gap-y-3.5 text-xs font-medium text-gray-400 max-w-5xl mx-auto relative z-10">
                     {[
-                        { label: 'Find a Doctor', href: '/find-doctor' },
-                        { label: 'Request an Appointment', href: '/appointment' },
-                        { label: 'Online Report', href: '/report' },
-                        { label: 'Career Opportunities', href: '/career' },
-                        { label: 'Medical Specialties', href: '/speciality' },
-                        { label: 'Health Packages', href: '/packages' },
-                        { label: 'News & Media', href: '/news' },
-                        { label: 'Medical Blogs', href: '/blogs' },
-                        { label: 'About Our Center', href: '/about' },
-                        { label: 'Patient Stories', href: '/stories' },
-                        { label: 'Patient & Visitor Guide', href: '/guide' },
-                        { label: 'Privacy Policy', href: '/privacy' },
-                        { label: 'Terms of Service', href: '/terms' },
+                        { label: 'Find a Doctor', href: '/under-construction' },
+                        { label: 'Request an Appointment', href: '/under-construction' },
+                        { label: 'Online Report', href: '/under-construction' },
+                        { label: 'Career Opportunities', href: '/under-construction' },
+                        { label: 'Medical Specialties', href: '/under-construction' },
+                        { label: 'Health Packages', href: '/under-construction' },
+                        { label: 'News & Media', href: '/under-construction' },
+                        { label: 'Medical Blogs', href: '/under-construction' },
+                        { label: 'About Our Center', href: '/under-construction' },
+                        { label: 'Patient Stories', href: '/under-construction' },
+                        { label: 'Patient & Visitor Guide', href: '/under-construction' },
+                        { label: 'Privacy Policy', href: '/under-construction' },
+                        { label: 'Terms of Service', href: '/under-construction' },
                     ].map((link, idx) => (
                         <Link
                             key={idx}
