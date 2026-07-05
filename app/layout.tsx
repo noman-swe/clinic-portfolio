@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/pages/Navbar/Header";
 import Footer from "@/components/pages/Footer";
+import BackToTop from "@/components/shared/BackToTop";
 
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -23,12 +24,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${plusJakartaSans.variable} font-sans antialiased`}>
+      <body className={`${plusJakartaSans.variable} font-sans antialiased scroll-smooth`}>
         <Header />
         <main>
           {children}
         </main>
         <Footer />
+
+        <BackToTop />
       </body>
     </html>
   );

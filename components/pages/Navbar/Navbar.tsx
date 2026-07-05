@@ -36,6 +36,21 @@ export default function Navbar({
         { name: "Careers", href: "/careers" },
     ];
 
+    //  const pathname = usePathname();
+
+    const handleLogoClick = (
+        e: React.MouseEvent<HTMLAnchorElement>
+    ) => {
+        if (pathname === "/") {
+            e.preventDefault();
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+            });
+        }
+    };
+
     const designNavLink = (item: NavItem) => {
         const isActive = item.megaMenu
             ? pathname.startsWith("/specialities")
@@ -90,8 +105,9 @@ export default function Navbar({
             <div className="bg-white text-slate-600 relative border-b border-slate-100">
                 <div className="mx-auto container px-6">
                     <div className="flex h-20 items-center justify-between">
-                        <Link href="/">
+                        <Link href="/" onClick={handleLogoClick}>
                             <Image
+
                                 src="/images/logo/sonia-logo.png"
                                 alt="Logo"
                                 width={210}
