@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/pages/Navbar/Header";
 import Footer from "@/components/pages/Footer";
 import BackToTop from "@/components/shared/BackToTop";
+import AIChatBot from "@/components/AIChatbot";
 
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -31,7 +32,8 @@ export default function RootLayout({
         </main>
         <Footer />
 
-        <BackToTop />
+        <AIChatBot />
+        {/* <BackToTop /> */}
       </body>
     </html>
   );
