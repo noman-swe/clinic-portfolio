@@ -14,7 +14,7 @@ import { SoniaLogo } from '../shared/SoniaLogo';
 
 export default function Footer() {
     return (
-        <footer className="relative bg-primary/70 text-white pt-20 pb-12 overflow-hidden font-sans antialiased selection:bg-cyan-500/20 selection:text-cyan-300 ">
+        <footer className="relative bg-primary text-white pt-20 pb-12 overflow-hidden font-sans antialiased ">
 
             {/* ১. ব্যাকগ্রাউন্ড গ্লো/সার্কেল ইফেক্ট bg-[#0b1e36] */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-150 bg-[#14355a]/60 rounded-full blur-[140px] opacity-70 pointer-events-none z-0" />
