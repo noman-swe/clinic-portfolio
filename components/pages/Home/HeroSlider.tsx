@@ -134,24 +134,29 @@ export default function HeroSlider() {
             </div>
 
             {/* OVERLAPPING ACTION BUTTONS SECTION */}
-            <div className="absolute bottom-20 left-1/2 -translate-x-1/2 translate-y-1/2 z-40 w-full container px-6 md:px-8">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-3">
+            <div className="relative lg:absolute lg:bottom-0 lg:left-1/2 lg:-translate-x-1/2 lg:translate-y-1/2 z-40 w-full container px-4 sm:px-6 md:px-8 mt-6 lg:mt-0">
+                <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-3 lg:gap-4">
                     {quickActions.map((action, index) => {
                         const IconComponent = action.icon;
+                        const isLastItem = index === quickActions.length - 1;
+
                         return (
                             <Link
                                 key={index}
                                 href={action.href}
-                                className="group flex lg:flex-col items-center justify-start lg:justify-center text-left lg:text-center p-5 lg:p-6 bg-primary text-white rounded-md shadow-2xl transition-all duration-300 hover:bg-sky-500 hover:text-primary hover:-translate-y-2 gap-4 lg:gap-3 border-b-4 border-sky-500/30 hover:border-primary/20"
+                                className={`group flex flex-row lg:flex-col items-center justify-start lg:justify-center 
+                                    p-4 lg:p-6 bg-primary text-white rounded-xl lg:rounded-md shadow-xl lg:shadow-2xl 
+                                    transition-all duration-300 hover:bg-sky-500 hover:text-white hover:-translate-y-1.5 
+                                    gap-3 lg:gap-3 border-b-4 border-sky-500/30 hover:border-transparent
+                                    ${isLastItem ? "col-span-2 sm:col-span-2 lg:col-span-1" : "col-span-1"}`}
                             >
-                                <div className="p-3 bg-white/10 rounded-lg text-sky-400 group-hover:bg-primary/10 group-hover:text-primary transition-colors duration-300 shrink-0">
-                                    <IconComponent size={24} strokeWidth={2} />
+                                <div className="p-2.5 bg-white/10 rounded-lg text-sky-400 group-hover:bg-white/20 group-hover:text-white transition-colors duration-300 shrink-0">
+                                    <IconComponent size={20} className="lg:w-6 lg:h-6" strokeWidth={2} />
                                 </div>
 
-                                <span className="text-[13px] sm:text-[14px] font-bold tracking-wide uppercase leading-snug">
+                                <span className="text-[11px] sm:text-xs lg:text-[13px] font-bold tracking-wide uppercase leading-tight">
                                     {action.name}
                                 </span>
-                              
                             </Link>
                         );
                     })}
